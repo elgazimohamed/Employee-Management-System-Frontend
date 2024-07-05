@@ -17,4 +17,8 @@ export class EmployeeListComponent implements OnInit {
       this.employees = data;
     });
   }
+
+  viewDetails(id: string) {
+    console.log(id);
+  }
 }
