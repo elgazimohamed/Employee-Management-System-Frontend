@@ -11,7 +11,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddEmployeeComponent {
   employee: Employee = {
-    id: '',
     firstName: '',
     lastName: '',
     email: '',
@@ -27,18 +26,17 @@ export class AddEmployeeComponent {
   ) {}
 
   addEmployee(): void {
+    console.log('Employee:', this.employee);
     this.employeeService.addEmployee(this.employee).subscribe({
-      // console.log();
-
       next: (response: any) => {
-        console.log('Employee added successfully:', response);
-        setTimeout(() => {
-          this.toastr.success(response.message);
-        }, 1000);
+        console.log(response);
+        this.toastr.success(
+          response.message || 'Employee added successfully in the database.'
+        );
         this.goBack();
       },
       error: (error: any) => {
-        this.toastr.error(error.error.message);
+        this.toastr.error(error.error);
       },
     });
   }

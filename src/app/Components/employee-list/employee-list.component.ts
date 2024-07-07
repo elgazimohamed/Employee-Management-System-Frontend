@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Employee } from 'src/app/Models/employee.model';
 import { EmployeeService } from 'src/app/Services/employee.service';
 
@@ -13,7 +14,8 @@ export class EmployeeListComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -40,10 +42,16 @@ export class EmployeeListComponent implements OnInit {
   }
 
   deleteEmployee(id: string): void {
-    if (confirm(`Are you sure you want to delete this employee ?`)) {
-      this.employeeService.deleteEmployee(id).subscribe(() => {
-        // Remove the deleted employee from the UI
-        this.employees = this.employees.filter((e) => e.id !== id);
+    if (confirm(`Are you sure you want to delete this employee?`)) {
+      this.employeeService.deleteEmployee(id).subscribe({
+        next: (response) => {
+          // Remove the deleted employee from the UI
+          this.toastr.success(response.message);
+          this.loadEmployees();
+        },
+        error: (error) => {
+          this.toastr.error(error);
+        },
       });
     }
   }

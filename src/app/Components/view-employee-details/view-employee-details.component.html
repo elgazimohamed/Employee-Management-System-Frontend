@@ -1,1 +1,31 @@
-<p>view-employee-details works!</p>
+<div class="container">
+  <div class="employee-details">
+    <h2>Employee Details</h2>
+    <div class="mb-3">
+      <p class="d-flex">
+        <span class="label">First Name:</span>
+        <span class="value" id="firstName">{{ employee?.firstName }}</span>
+      </p>
+      <p class="d-flex">
+        <span class="label">Last Name:</span>
+        <span class="value" id="lastName">{{ employee?.lastName }}</span>
+      </p>
+      <p class="d-flex">
+        <span class="label">Email:</span>
+        <span class="value" id="email">{{ employee?.email }}</span>
+      </p>
+      <p class="d-flex">
+        <span class="label">Phone Number:</span>
+        <span class="value" id="phoneNumber">{{ employee?.phoneNumber }}</span>
+      </p>
+      <p class="d-flex">
+        <span class="label">Position:</span>
+        <span class="value" id="position">{{ employee?.position }}</span>
+      </p>
+      <p class="d-flex">
+        <span class="label">Department:</span>
+        <span class="value" id="department">{{ employee?.department }}</span>
+      </p>
+    </div>
+  </div>
+</div>
