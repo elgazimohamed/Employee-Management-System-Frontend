@@ -26,7 +26,6 @@ export class AddEmployeeComponent {
   ) {}
 
   addEmployee(): void {
-    console.log('Employee:', this.employee);
     this.employeeService.addEmployee(this.employee).subscribe({
       next: (response: any) => {
         console.log(response);
@@ -42,7 +41,6 @@ export class AddEmployeeComponent {
   }
 
   goBack(): void {
-    // Navigate back to the employee list or desired route
-    this.router.navigate(['/employee-list']); // Replace '/employee-list' with your actual employee list route
+    this.router.navigate(['/employee-list']);
   }
 }
