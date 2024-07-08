@@ -1,27 +1,62 @@
-# EmployeeManagementSystem
+# Employee Management System - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+This is the frontend part of an Employee Management System project built with Angular. It interacts with a backend API developed using ASP.NET Core Web API to perform CRUD operations on employee data.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Display a list of employees with options to view details, edit, and delete.
+- Add new employees
+- Edit existing employees
+- Delete employees with confirmation.
+- Navigate between employee list, employee details, and employee editing views.
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 14**  : Frontend framework for building single-page applications.
+- **Bootstrap 5** : Frontend framework for designing and styling the UI.
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To get a local copy up and running follow these simple steps.
 
-## Running unit tests
+### Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js : Version 14.x or higher.
+- Angular CLI : Version 14.x
+- Visual Studio Code (or any preferred IDE)
 
-## Running end-to-end tests
+### Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Clone the repo**
+   
+   ```sh
+   git clone https://github.com/elgazimohamed/Employee-Management-System-Frontend.git
 
-## Further help
+2. **Navigate to the project directory**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```sh
+   cd Employee-Management-System-Frontend
+
+3. **Install NPM packages**
+
+   ```sh
+   npm install
+
+4. **Run the Angular development server**
+
+   ```sh
+   ng serve
+   
+5. **Open your browser and navigate to :**
+    
+   ```sh
+   http://localhost:4200/
+
+## Usage
+
+1. Ensure the backend ASP.NET Core Web API app is running. If not, clone and run it from [here](https://github.com/elgazimohamed/Employee-Management-System-Backend).
+2. Navigate to the homepage to view the list of employees.
+3. Use the "Add new employee" button to fill out a form and add a new employee.
+4. Click "View Details" to see more information about a specific employee.
+5. Click "Edit" to modify an employee's details using the form.
+6. Click "Delete" to remove an employee from the list.
